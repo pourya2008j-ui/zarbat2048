@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>2048 Tournament</title>
+  <link rel="stylesheet" href="styleT.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+  <!-- پنجره ورود تیکت -->
+  <div id="ticket-modal" class="modal">
+    <div class="modal-box">
+      <h3>لطفاً کد تیکت خود را وارد نمایید</h3>
+      <input id="ticket-input" type="text" placeholder="کد تیکت">
+      <button id="ticket-submit">ورود</button>
+      <button id="ticket-help" class="help-btn">راهنمای دریافت تیکت</button>
+      <p id="ticket-error" class="error hidden">کد تیکت اشتباه است</p>
+    </div>
+  </div>
+
+  <div class="scale-container">
+
+    <div class="game-wrapper">
+      <div class="header">
+        <h1>ZARBAT-2048</h1>
+        <div class="score-box">
+          <div class="score-label">امتیاز</div>
+          <div id="score">0</div>
+        </div>
+        <div class="timer-box">
+          <div class="score-label">زمان</div>
+          <div id="timer">04:00</div>
+        </div>
+      </div>
+
+      <div class="info">
+        این بخش تورنمنت است - لطفاً کد تیکت معتبر وارد کنید تا وارد بازی شوید
+      </div>
+
+      <div id="game-container">
+        <div id="grid-background"></div>
+        <div id="tiles-layer"></div>
+      </div>
+
+      <div id="message" class="hidden"></div>
+      <!-- دکمه شروع دوباره حذف شد -->
+
+      <!-- دکمه‌های جهت‌نما -->
+      <div class="controls">
+        <button class="ctrl-btn" data-dir="up">⬆️</button>
+        <div class="ctrl-row">
+          <button class="ctrl-btn" data-dir="right">➡️</button>
+          <button class="ctrl-btn" data-dir="down">⬇️</button>
+          <button class="ctrl-btn" data-dir="left">⬅️</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="ticket.js"></script>
+  <script src="gameT.js"></script>
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.setHeaderColor("secondary_bg_color");
+    Telegram.WebApp.setBackgroundColor("#faf8ef");
+    Telegram.WebApp.disableVerticalSwipe();
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>2048 WebApp</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+  <div class="scale-container">
+
+    <div class="game-wrapper">
+      <div class="header">
+        <h1>ZARBAT-2048</h1>
+        <div class="score-box">
+          <div class="score-label">امتیاز</div>
+          <div id="score">0</div>
+        </div>
+        <div class="timer-box">
+          <div class="score-label">زمان</div>
+          <div id="timer">04:00</div>
+        </div>
+      </div>
+
+      <div class="info">
+        این صفحه تمرین است - اگر فکر می کنید اماده هستید, می توانید وارد بخش تورنمنت شوید و پول مسابقه را برنده شوید
+      </div>
+
+      <div id="game-container">
+        <div id="grid-background"></div>
+        <div id="tiles-layer"></div>
+      </div>
+
+      <div id="message" class="hidden"></div>
+      <button id="restart-btn">شروع دوباره</button>
+
+      <!-- دکمه‌های جهت‌نما باید اینجا باشند -->
+      <div class="controls">
+        <button class="ctrl-btn" data-dir="up">⬆️</button>
+        <div class="ctrl-row">
+          <button class="ctrl-btn" data-dir="right">➡️</button>
+          <button class="ctrl-btn" data-dir="down">⬇️</button>
+          <button class="ctrl-btn" data-dir="left">⬅️</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.setHeaderColor("secondary_bg_color");
+    Telegram.WebApp.setBackgroundColor("#faf8ef");
+    Telegram.WebApp.disableVerticalSwipe();
+  </script>
+</body>
+</html>
